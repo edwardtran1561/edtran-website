@@ -1,3 +1,10 @@
+import ArticleList from "@/features/blog/components/article-list";
+import Container from "@/components/ui/container";
+
 export default function BlogPage() {
-  return <div>Blog</div>;
+  return (
+    <Container>
+      <ArticleList />
+    </Container>
+  );
 }

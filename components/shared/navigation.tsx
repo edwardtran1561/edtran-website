@@ -97,7 +97,7 @@ const Navigation: React.FC = () => {
 
 const NavigationItem: React.FC<NavigationItemProps> = (props) => {
   const linkClassses = classNames({
-    "flex items-center gap-2 px-5 py-3 rounded-tl-lg rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700": true,
+    "flex items-center gap-2 px-5 py-3 rounded-tl-lg rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-sm": true,
     "bg-blue-600 text-white hover:bg-blue-600!": props.isActive,
   });
 

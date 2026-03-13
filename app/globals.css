@@ -1,6 +1,2 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
-
-body {
-  @apply text-sm;
-}
