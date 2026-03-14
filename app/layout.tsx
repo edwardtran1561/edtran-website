@@ -24,7 +24,6 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased dark:bg-gray-800 dark:text-white`}
       >
-        <Header />
         {children}
       </body>
     </html>

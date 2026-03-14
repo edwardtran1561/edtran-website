@@ -17,7 +17,7 @@ const Button = <C extends React.ElementType = "button">({
   ...props
 }: ButtonProps<C>) => {
   const classes = classNames({
-    "p-3 rounded-lg cursor-pointer": true,
+    "p-3 rounded-lg cursor-pointer disabled:opacity-50": true,
     ["bg-blue-600 hover:bg-blue-700 text-white"]: variant === "primary",
     ["bg-gray-200 hover:bg-gray-300 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-700"]:
       variant === "secondary",

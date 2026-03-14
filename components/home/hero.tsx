@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative py-20 bg-linear-to-br from-primary/5 via-background to-secondary/5">
+    <section className="relative py-10 bg-linear-to-br from-primary/5 via-background to-secondary/5">
       <Container>
         <div className="flex flex-col md:flex-row flex-nowrap items-center gap-3">
           <HeroGreeting />
