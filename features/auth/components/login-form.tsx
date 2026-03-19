@@ -62,7 +62,7 @@ const LoginForm: React.FC = () => {
       onSubmit={form.handleSubmit(handleSubmit)}
     >
       <div className="flex flex-col items-stretch justify-center">
-        <h1 className="text-2xl font-bold text-blue-600">Login</h1>
+        <h1 className="text-2xl font-bold text-indigo-600">Login</h1>
         <p className="text-sm text-gray-600">
           Enter admin account for access CMS system
         </p>

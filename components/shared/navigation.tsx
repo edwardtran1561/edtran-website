@@ -1,12 +1,13 @@
 "use client";
 
 import {
-  Home,
-  User,
   PhoneCall,
   Pen,
   Menu,
   CircleX,
+  Toolbox,
+  FileBraces,
+  Smile,
   type LucideProps,
 } from "lucide-react";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
@@ -16,7 +17,6 @@ import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { useState } from "react";
 import Button from "../ui/button";
-import SearchBox from "./search-box";
 
 interface NavigationItemProps {
   label: string;
@@ -28,19 +28,24 @@ interface NavigationItemProps {
 
 const NAVIGATION_ITEMS: NavigationItemProps[] = [
   {
-    label: "Home",
+    label: "About me",
     url: "/",
-    icon: Home,
-  },
-  {
-    label: "About",
-    url: "/about",
-    icon: User,
+    icon: Smile,
   },
   {
     label: "Contact",
     url: "/contact",
     icon: PhoneCall,
+  },
+  {
+    label: "Projects",
+    url: "/projects",
+    icon: FileBraces,
+  },
+  {
+    label: "Tools",
+    url: "/tools",
+    icon: Toolbox,
   },
   {
     label: "Blog",
@@ -63,25 +68,24 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       <Button
         variant={isOpen ? "primary" : "secondary"}
         type="button"
         onClick={handleToggle}
-        className="lg:hidden"
+        className="lg:hidden ml-auto"
       >
         {isOpen ? <CircleX size={20} /> : <Menu size={20} />}
       </Button>
       <nav
         className={classNames({
-          "absolute top-full left-0 right-0 lg:relative lg:flex": true,
-          "flex flex-col px-3 pb-3 bg-white dark:bg-gray-900 shadow-lg lg:bg-transparent lg:shadow-none lg:p-0":
+          "absolute top-full left-0 right-0 lg:relative lg:flex basis-auto": true,
+          "flex flex-col px-2 pb-2 bg-white dark:bg-gray-900 shadow-lg lg:bg-transparent lg:shadow-none lg:p-0":
             isOpen,
           hidden: !isOpen,
         })}
       >
-        <SearchBox className="sm:hidden mb-3" />
-        <ul className="flex flex-col lg:flex-row list-none gap-2 lg:items-center">
+        <ul className="flex flex-col lg:flex-row list-none lg:gap-3 lg:items-center">
           {NAVIGATION_ITEMS.map((props) => (
             <NavigationItem
               key={props.url}
@@ -91,14 +95,14 @@ const Navigation: React.FC = () => {
           ))}
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 
 const NavigationItem: React.FC<NavigationItemProps> = (props) => {
   const linkClassses = classNames({
-    "flex items-center gap-2 px-5 py-3 rounded-tl-lg rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-sm": true,
-    "bg-blue-600 text-white hover:bg-blue-600!": props.isActive,
+    "flex items-center gap-2 px-5 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm transition shadow-none!": true,
+    "bg-indigo-600 text-white hover:bg-indigo-600! font-bold": props.isActive,
   });
 
   return (

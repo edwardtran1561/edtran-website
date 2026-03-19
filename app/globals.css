@@ -1,2 +1,19 @@
 @import "tailwindcss";
-@custom-variant dark (&:is(.dark *));
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-pulseGlow: pulseGlow 6s ease-in-out infinite;
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.3;
+    }
+  }
+}

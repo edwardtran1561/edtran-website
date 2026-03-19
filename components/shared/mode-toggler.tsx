@@ -1,31 +1,24 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
-import { useEffect } from "react";
-import { useLocalStorage } from "usehooks-ts";
+import { useEffect, useState } from "react";
+import { Moon, Sun, Loader } from "lucide-react";
 import Button from "../ui/button";
+import useDarkmode from "@/hooks/use-darkmode";
 
 const ModeToggle: React.FC = () => {
-  const [isDark, setIsDark] = useLocalStorage<boolean>("dark-mode", false, {
-    initializeWithValue: false,
-  });
+  const { isDark, handleToggle } = useDarkmode();
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.add("color-scheme-dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.remove("color-scheme-dark");
-    }
-  }, [isDark]);
+    setMounted(true);
+  }, []);
 
-  const handleToggle = () => {
-    const next = !isDark;
-    setIsDark(next);
-
-    document.documentElement.classList.toggle("dark");
-    document.documentElement.classList.toggle("color-scheme-dark");
-  };
+  if (!mounted) {
+    return (
+      <Button variant="secondary">
+        <Loader className="animate-spin" size={20} />
+      </Button>
+    );
+  }
 
   return (
     <Button variant="secondary" type="button" onClick={handleToggle}>

@@ -17,9 +17,9 @@ const Button = <C extends React.ElementType = "button">({
   ...props
 }: ButtonProps<C>) => {
   const classes = classNames({
-    "p-3 rounded-lg cursor-pointer disabled:opacity-50": true,
-    ["bg-blue-600 hover:bg-blue-700 text-white"]: variant === "primary",
-    ["bg-gray-200 hover:bg-gray-300 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-700"]:
+    "p-3 rounded-md cursor-pointer disabled:opacity-50 transition": true,
+    ["bg-indigo-600 hover:bg-indigo-700 text-white"]: variant === "primary",
+    ["bg-gray-100 hover:bg-gray-200 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-700 drop-shadow"]:
       variant === "secondary",
     ["border-2 border-gray-200 hover:bg-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"]:
       variant === "outlined",
