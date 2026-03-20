@@ -14,14 +14,16 @@ export default function useDarkmode() {
   }, [theme]);
 
   const handleToggle = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
+    if (theme === "light") {
       setTheme("dark");
+    }
+    if (theme === "dark") {
+      setTheme("system");
+    }
+    if (theme === "system") {
+      setTheme("light");
     }
   };
 
-  const isDark = theme === "dark";
-
-  return { isDark, handleToggle };
+  return { theme, handleToggle };
 }

@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Moon, Sun, Loader } from "lucide-react";
+import { Moon, Sun, Loader, Monitor } from "lucide-react";
 import Button from "../ui/button";
 import useDarkmode from "@/hooks/use-darkmode";
 
 const ModeToggle: React.FC = () => {
-  const { isDark, handleToggle } = useDarkmode();
+  const { theme, handleToggle } = useDarkmode();
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -22,7 +22,16 @@ const ModeToggle: React.FC = () => {
 
   return (
     <Button variant="secondary" type="button" onClick={handleToggle}>
-      {isDark ? <Moon size={20} /> : <Sun size={20} />}
+      {(() => {
+        if (theme === "dark") {
+          return <Moon size={20} />;
+        }
+        if (theme === "light") {
+          return <Sun size={20} />;
+        }
+
+        return <Monitor size={20} />;
+      })()}
     </Button>
   );
 };

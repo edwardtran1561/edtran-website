@@ -15,7 +15,7 @@ const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const classes = classNames({
-    "px-3 py-2 outline-none rounded-lg": true,
+    "px-3 py-2 outline-none rounded-lg dark:text-gray-200 dark:border-gray-700 focus:border-indigo-600": true,
     "border-2 border-gray-200": variant === "outlined",
     [className || ""]: !!className,
   });

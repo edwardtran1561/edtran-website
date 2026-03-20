@@ -58,12 +58,12 @@ const LoginForm: React.FC = () => {
     <Form
       action="/api/auth/login"
       name="login"
-      className="flex flex-col gap-5 p-10 bg-white shadow-lg rounded-lg w-100 max-w-full items-stretch justify-stretch"
+      className="flex flex-col gap-5 p-10 bg-white shadow-lg rounded-lg w-100 max-w-full items-stretch justify-stretch dark:bg-gray-900 dark:text-gray-100"
       onSubmit={form.handleSubmit(handleSubmit)}
     >
       <div className="flex flex-col items-stretch justify-center">
         <h1 className="text-2xl font-bold text-indigo-600">Login</h1>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-500">
           Enter admin account for access CMS system
         </p>
       </div>

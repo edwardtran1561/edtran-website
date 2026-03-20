@@ -2,8 +2,6 @@ import Container from "../ui/container";
 import ModeToggle from "./mode-toggler";
 import Navigation from "./navigation";
 import Link from "next/link";
-import Image from "next/image";
-import useDarkmode from "@/hooks/use-darkmode";
 
 interface HeaderBrandProps {
   title: string;
