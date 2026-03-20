@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full h-18.75 bg-white shadow-lg dark:bg-gray-900 z-100 flex items-center">
       <Container>
-        <div className="flex flex-row justify-between items-center gap-3 lg:gap-5">
+        <div className="flex flex-row justify-between items-center gap-3 lg:gap-5 max-w-full">
           <HeaderBrand title="Edward Tran" desc="Share good things" />
           <Navigation />
           <ModeToggle />

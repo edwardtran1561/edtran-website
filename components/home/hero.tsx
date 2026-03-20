@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-24 pb-32 inset-shadow-lg inset-shadow-gray-500">
+    <section className="relative pt-24 pb-32 inset-shadow-lg inset-shadow-gray-500 overflow-hidden">
       <div className="absolute inset-0 z-10 opacity-30 text-gray-500 mask-[radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
         <svg className="w-full h-full">
           <defs>
