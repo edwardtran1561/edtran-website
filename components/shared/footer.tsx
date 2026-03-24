@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="relative bg-gray-100 dark:bg-gray-900 py-10">
-      <Container>Footer</Container>
+      <Container>{date.getFullYear()}</Container>
     </footer>
   );
 };

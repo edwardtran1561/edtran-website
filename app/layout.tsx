@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Providers from "./provider";
 

@@ -114,6 +114,11 @@ const SKILLS: SkillProps = {
         title: "NestJS",
         icon: <SiNestjs color="#E0234E" size={ICON_SIZE} />,
       },
+    ],
+  },
+  database: {
+    title: "Database",
+    items: [
       {
         title: "MongoDB",
         icon: <SiMongodb color="#47A248" size={ICON_SIZE} />,

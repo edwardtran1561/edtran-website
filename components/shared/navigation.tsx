@@ -10,12 +10,13 @@ import {
   Smile,
   type LucideProps,
 } from "lucide-react";
+
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 
-import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-import { useState } from "react";
+import Link from "next/link";
 import Button from "../ui/button";
 
 interface NavigationItemProps {

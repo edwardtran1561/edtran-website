@@ -54,6 +54,7 @@ const LoginForm: React.FC = () => {
       setIsLoading(false);
     }, 1000);
   };
+
   return (
     <Form
       action="/api/auth/login"

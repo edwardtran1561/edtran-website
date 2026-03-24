@@ -3,17 +3,12 @@ import ModeToggle from "./mode-toggler";
 import Navigation from "./navigation";
 import Link from "next/link";
 
-interface HeaderBrandProps {
-  title: string;
-  desc: string;
-}
-
 const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full h-18.75 bg-white shadow-lg dark:bg-gray-900 z-100 flex items-center">
       <Container>
         <div className="flex flex-row justify-between items-center gap-3 lg:gap-5 max-w-full">
-          <HeaderBrand title="Edward Tran" desc="Share good things" />
+          <HeaderBrand />
           <Navigation />
           <ModeToggle />
         </div>
@@ -22,7 +17,7 @@ const Header: React.FC = () => {
   );
 };
 
-const HeaderBrand: React.FC<HeaderBrandProps> = ({ title, desc }) => {
+const HeaderBrand: React.FC = () => {
   return (
     <Link href="/" className="shrink-0 text-center group">
       <div className="flex flex-row items-center gap-2">
@@ -43,4 +38,5 @@ export const Logo = ({ className }: { className?: string }) => (
     </g>
   </svg>
 );
+
 export default Header;

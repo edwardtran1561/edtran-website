@@ -1,32 +1,11 @@
+import { Fragment } from "react";
 import Container from "../ui/container";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
     <section className="relative pt-24 pb-32 inset-shadow-lg inset-shadow-gray-500 overflow-hidden">
-      <div className="absolute inset-0 z-10 opacity-30 text-gray-500 mask-[radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
-        <svg className="w-full h-full">
-          <defs>
-            <pattern
-              id="grid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-      <div className="absolute top-40 left-1/2 -translate-x-1/2 -z-10">
-        <div className="w-100 h-100 dark:bg-indigo-400 bg-indigo-500 opacity-10 blur-3xl rounded-full animate-pulseGlow" />
-      </div>
+      <HeroBackground />
       <Container className="relative z-10">
         <div className="flex flex-col md:flex-row flex-nowrap items-center gap-10">
           <HeroGreeting />
@@ -41,12 +20,12 @@ const HeroGreeting: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 basis-auto">
       <div className="flex flex-col gap-3">
-        <h2 className="text-5xl flex items-end gap-3 font-bold text-gray-900 dark:text-gray-100 leading-none">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl flex items-end gap-3 font-bold text-gray-900 dark:text-gray-100 leading-none">
           Hi, I&#39;m Edward 👋
         </h2>
-        <h2 className="text-2xl flex items-center gap-3 leading-none text-gray-500 dark:text-gray-200">
+        <h3 className="text-2xl flex items-center gap-3 leading-none text-gray-500 dark:text-gray-200">
           Fullstack Developer
-        </h2>
+        </h3>
         <p className="text-lg font-normal text-gray-600 dark:text-gray-300 leading-normal">
           I’m a developer driven by curiosity and a deep passion for
           programming. I love turning ideas into clean, efficient, and
@@ -106,6 +85,36 @@ const HeroMedia: React.FC = () => {
         />
       </div>
     </div>
+  );
+};
+
+const HeroBackground: React.FC = () => {
+  return (
+    <Fragment>
+      <div className="absolute inset-0 z-10 opacity-30 text-gray-500 mask-[radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
+        <svg className="w-full h-full">
+          <defs>
+            <pattern
+              id="grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 -z-10">
+        <div className="w-100 h-100 dark:bg-indigo-400 bg-indigo-500 opacity-10 blur-3xl rounded-full animate-pulseGlow" />
+      </div>
+    </Fragment>
   );
 };
 
