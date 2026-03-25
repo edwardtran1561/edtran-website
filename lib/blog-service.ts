@@ -2,6 +2,7 @@ import notion from "./notion";
 import { BlogPost, NotionPage } from "@/types/blog";
 
 const DATABASE_ID = process.env.NOTION_DATABASE_ID || "";
+export const revalidate = 60; // revalidate mỗi 60 giây
 
 /**
  * Parse Notion page to BlogPost
