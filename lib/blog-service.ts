@@ -179,44 +179,51 @@ export async function getPageContent(pageId: string): Promise<string> {
         const paragraph = blockData.paragraph as Record<string, unknown>;
         const richText = paragraph.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<p>${text}</p>`;
+        if (text)
+          content += `<p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">${text}</p>`;
       } else if (blockData.type === "heading_1") {
         const heading = blockData.heading_1 as Record<string, unknown>;
         const richText = heading.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<h1>${text}</h1>`;
+        if (text)
+          content += `<h2 class="text-4xl font-bold text-gray-900 dark:text-white mt-10 mb-4">${text}</h2>`;
       } else if (blockData.type === "heading_2") {
         const heading = blockData.heading_2 as Record<string, unknown>;
         const richText = heading.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<h2>${text}</h2>`;
+        if (text)
+          content += `<h3 class="text-3xl font-semibold text-gray-900 dark:text-white mt-8 mb-3">${text}</h3>`;
       } else if (blockData.type === "heading_3") {
         const heading = blockData.heading_3 as Record<string, unknown>;
         const richText = heading.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<h3>${text}</h3>`;
+        if (text)
+          content += `<h4 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 mt-6 mb-2">${text}</h4>`;
       } else if (blockData.type === "bulleted_list_item") {
         const item = blockData.bulleted_list_item as Record<string, unknown>;
         const richText = item.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<li>${text}</li>`;
+        if (text)
+          content += `<li class="text-base text-gray-700 dark:text-gray-300 leading-relaxed ml-6 mb-1 list-disc">${text}</li>`;
       } else if (blockData.type === "numbered_list_item") {
         const item = blockData.numbered_list_item as Record<string, unknown>;
         const richText = item.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<li>${text}</li>`;
+        if (text)
+          content += `<li class="text-base text-gray-700 dark:text-gray-300 leading-relaxed ml-6 mb-1 list-decimal">${text}</li>`;
       } else if (blockData.type === "code") {
         const code = blockData.code as Record<string, unknown>;
         const richText = code.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
         const language = (code.language as string) || "plaintext";
         if (text)
-          content += `<pre><code class="language-${language}">${text}</code></pre>`;
+          content += `<pre class="bg-gray-900 dark:bg-gray-950 rounded-xl p-4 my-4 overflow-x-auto"><code class="language-${language} text-sm text-gray-100 font-mono">${text}</code></pre>`;
       } else if (blockData.type === "quote") {
         const quote = blockData.quote as Record<string, unknown>;
         const richText = quote.rich_text as Array<{ plain_text: string }>;
         const text = richText.map((t) => t.plain_text).join("");
-        if (text) content += `<blockquote>${text}</blockquote>`;
+        if (text)
+          content += `<blockquote class="border-l-4 border-indigo-500 pl-4 my-4 italic text-gray-600 dark:text-gray-400">${text}</blockquote>`;
       }
     }
 
