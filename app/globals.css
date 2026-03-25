@@ -4,6 +4,10 @@
 
 @theme {
   --animate-pulseGlow: pulseGlow 6s ease-in-out infinite;
+  --animate-slideInUp: slideInUp 0.8s ease-out;
+  --animate-slideInDown: slideInDown 0.8s ease-out;
+  --animate-fadeInScale: fadeInScale 0.8s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
 
   @keyframes pulseGlow {
     0%,
@@ -16,4 +20,48 @@
       opacity: 0.3;
     }
   }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
+

@@ -1,5 +1,5 @@
 const Drawer: React.FC = () => {
-  return <>Hello</>;
+  return <>This is drawer</>;
 };
 
 export default Drawer;

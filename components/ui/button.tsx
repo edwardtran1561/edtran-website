@@ -6,18 +6,27 @@ type ButtonProps<C extends React.ElementType> = PolymorphicComponentProps<
   C,
   {
     variant?: Variant;
+    size?: "sm" | "md" | "lg";
   }
 >;
 
 const Button = <C extends React.ElementType = "button">({
   variant = "primary",
+  size = "md",
   children,
   className,
   as,
   ...props
 }: ButtonProps<C>) => {
+  const sizeClasses = {
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2 text-base",
+    lg: "px-6 py-3 text-lg",
+  };
+
   const classes = classNames({
-    "p-3 rounded-md cursor-pointer disabled:opacity-50 transition": true,
+    "rounded-md cursor-pointer disabled:opacity-50 transition": true,
+    [sizeClasses[size]]: true,
     ["bg-indigo-600 hover:bg-indigo-700 text-white"]: variant === "primary",
     ["bg-gray-100 hover:bg-gray-200 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-700 drop-shadow"]:
       variant === "secondary",

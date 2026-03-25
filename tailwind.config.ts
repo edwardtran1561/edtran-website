@@ -1,4 +1,6 @@
 // tailwind.config.ts
-export default {
+const config = {
   darkMode: "class",
 };
+
+export default config;

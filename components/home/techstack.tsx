@@ -34,10 +34,7 @@ type SkillGroup = {
   items: Skill[];
 };
 type SkillProps = {
-  frontend: SkillGroup;
-  backend: SkillGroup;
-  tools: SkillGroup;
-  ide: SkillGroup;
+  [name: string]: SkillGroup;
 };
 
 const ICON_SIZE = 20;
