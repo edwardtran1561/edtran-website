@@ -9,8 +9,6 @@ const DATABASE_ID = process.env.NOTION_DATABASE_ID || "";
 function parseNotionPage(page: NotionPage): BlogPost {
   const properties = page.properties;
 
-  console.log(properties);
-
   const title = properties.Title?.title[0]?.text.content || "Untitled";
   const slug =
     properties.Slug?.rich_text[0]?.text.content ||

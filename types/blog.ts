@@ -42,10 +42,8 @@ export interface NotionPage {
       }>;
     };
     Author?: {
-      rich_text: Array<{
-        text: {
-          content: string;
-        };
+      people: Array<{
+        name: string;
       }>;
     };
     "Published At"?: {
@@ -65,7 +63,11 @@ export interface NotionPage {
       checkbox: boolean;
     };
     "Cover Image"?: {
-      url: string;
+      files: Array<{
+        file: {
+          url: string;
+        };
+      }>;
     };
   };
   created_time: string;
