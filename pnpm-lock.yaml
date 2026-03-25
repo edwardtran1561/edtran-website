@@ -14,6 +14,9 @@ importers:
       '@icons-pack/react-simple-icons':
         specifier: ^13.13.0
         version: 13.13.0(react@19.2.3)
+      '@notionhq/client':
+        specifier: ^5.15.0
+        version: 5.15.0
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -462,6 +465,10 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@notionhq/client@5.15.0':
+    resolution: {integrity: sha512-boQ+zMmTu/HRfPajynYjlXkytkmn0rUgD0FJrbMaz6n1WC6HPxe2Lgn/Ay/VEA2j2dMzB1Hpnhtrtkz4Q1I/rw==}
+    engines: {node: '>=18'}
 
   '@parcel/watcher-android-arm64@2.5.6':
     resolution: {integrity: sha512-YQxSS34tPF/6ZG7r/Ih9xy+kP/WwediEUsqmtf0cuCV5TPPKw/PQHRhueUo6JdeFJaqV3pyjm0GdYjZotbRt/A==}
@@ -2476,6 +2483,8 @@ snapshots:
       fastq: 1.20.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@notionhq/client@5.15.0': {}
 
   '@parcel/watcher-android-arm64@2.5.6':
     optional: true

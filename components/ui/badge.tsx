@@ -31,7 +31,7 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       <span
         ref={ref}
         className={classNames(
-          "inline-flex items-center font-medium rounded-full",
+          "inline-flex items-center font-medium rounded-full w-fit whitespace-nowrap",
           variantStyles[variant],
           sizeStyles[size],
           className
@@ -47,4 +47,3 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 Badge.displayName = "Badge";
 
 export default Badge;
-
