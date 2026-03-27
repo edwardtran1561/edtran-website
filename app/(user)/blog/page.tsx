@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import Container from "@/components/ui/container";
 import Badge from "@/components/ui/badge";
 import Card from "@/components/ui/card";

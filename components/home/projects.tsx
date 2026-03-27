@@ -5,62 +5,15 @@ import Card from "../ui/card";
 import Badge from "../ui/badge";
 import Button from "../ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { PROJECTS } from "@/constants/projects";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image?: string;
-  tags: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    id: "1",
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce platform built with Next.js, featuring product catalog, shopping cart, and payment integration.",
-    tags: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
-  {
-    id: "2",
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, user authentication, and team collaboration features.",
-    tags: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
-  {
-    id: "3",
-    title: "Analytics Dashboard",
-    description:
-      "A comprehensive analytics dashboard displaying real-time data visualization with interactive charts and reports.",
-    tags: ["Next.js", "Chart.js", "PostgreSQL", "Express"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
-  {
-    id: "4",
-    title: "Social Media App",
-    description:
-      "A social networking platform with user profiles, messaging, and feed functionality built with modern web technologies.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
-];
+const featuredProjects = PROJECTS.filter((p) => p.featured).slice(0, 4);
 
 const Projects: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <Container>
         <div className="flex flex-col gap-12">
-          {/* Section Header */}
           <div className="flex flex-col gap-4">
             <Badge variant="primary" size="md">
               Portfolio
@@ -74,11 +27,9 @@ const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PROJECTS.map((project) => (
+            {featuredProjects.map((project) => (
               <Card key={project.id} hoverable className="flex flex-col gap-4">
-                {/* Project Header */}
                 <div className="flex flex-col gap-2">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                     {project.title}
@@ -88,7 +39,6 @@ const Projects: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" size="sm">
@@ -97,7 +47,6 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Actions */}
                 <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
                   {project.liveUrl && (
                     <Button
@@ -126,9 +75,12 @@ const Projects: React.FC = () => {
             ))}
           </div>
 
-          {/* View All Projects */}
           <div className="flex justify-center pt-8">
-            <Button variant="outlined" size="lg">
+            <Button
+              variant="outlined"
+              size="lg"
+              onClick={() => (window.location.href = "/projects")}
+            >
               View All Projects
             </Button>
           </div>
@@ -139,4 +91,3 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
-
